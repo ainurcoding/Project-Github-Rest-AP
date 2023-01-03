@@ -56,7 +56,6 @@ function App() {
             </div>
           </form>
         </div>
-        <p></p>
         {users.length < 1 ? (
           <>
             <div className="card" style={{ width: "18rem" }}>
@@ -76,7 +75,15 @@ function App() {
                   />
                   <div className="card-body">
                     <h5 className="card-title">{users[0].owner.login}</h5>
-                    <p><a className="btn btn-info text-decoration-none" href={`${users[0].owner.html_url}`}>See on github</a></p>
+                    <p>
+                      <a
+                        className="btn btn-info text-decoration-none"
+                        href={`${users[0].owner.html_url}`}
+                        target="_blank"
+                      >
+                        See on github
+                      </a>
+                    </p>
                   </div>
                   <div className="card-button">
                     {/* <button onClick={handleRepo(users.login)}>Click to see</button> */}
@@ -85,19 +92,27 @@ function App() {
               </div>
 
               <div
-                className="list-repos col-6 bg-success"
+                className="list-repos col-6 overflow-auto"
                 style={{ height: "70vh" }}
               >
                 <div className="repos-container">
                   <div className="title">
                     <p className="text-center h1">List Repositories</p>
                   </div>
-                  <div className="item-container overflow-auto">
-                    <div className="item-content">
-                      <p>Repository Name:</p>
-                      <p>Total Forks:</p>
-                      <p><a className="" href="">Visit repository</a></p>
-                    </div>
+                  <div className="item-container ">
+                    {users.map((user, index) => (
+                      <div className="item-content">
+                        <hr />
+                        <p>Repository Name: {user.name}</p>
+                        <p>Total Forks: {user.forks}</p>
+                        <p>
+                          <a className="btn btn-info text-decoration-none" href={`${user.html_url}`} target="_blank">
+                            Visit repository
+                          </a>
+                        </p>
+                        <hr />
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
