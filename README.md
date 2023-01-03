@@ -1,6 +1,6 @@
 # Getting Started with Project-Github-Rest-API
 
-<h1 align='center'><a href="https://github-rest-api-weld.vercel.app/">Demo Application</a></h1>
+<h1 align='center'><a href="https://github-rest-api-weld.vercel.app/" target='_blank'>Demo Application</a></h1>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
